@@ -1,0 +1,94 @@
+{
+    "layer": "bottom",
+    "position": "top",
+    "height": 10,
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["tray", "idle_inhibitor", "cpu", "memory", "pulseaudio", "network", "network#net2", "battery", "clock"],
+    "sway/mode": {
+        "format": " {}"
+    },
+    "sway/window": {
+        "max-length": 80,
+        "tooltip": false
+    },
+    "clock": {
+        "format": "{:%a  ·  %d.%m.%Y  ·  %H:%M}",
+        "tooltip": false
+    },
+    "cpu": {
+        "interval": 10,
+        "format": "{}% ",
+        "max-length": 10
+    },
+    "memory": {
+        "interval": 30,
+        "format": "{used:0.2f} GB",
+        "max-length": 10,
+        "tooltip": false
+    },
+    "battery": {
+        "bat": "BAT0",
+        "format": "{capacity}%",
+        "format-alt": "{time}",
+        "format-charging": "{capacity}%",
+        "interval": 30,
+        "states": {
+            "warning": 25,
+            "critical": 10
+        },
+        "tooltip": false
+    },
+    "network": {
+        "interface": "enp*",
+        "format": "{icon}",
+        "format-alt": "{ipaddr}/{cidr} {icon}",
+        "format-alt-click": "click-right",
+        "format-icons": {
+            "ethernet": [""],
+            "disconnected": [""]
+        },
+        "on-click": "alacritty -e nmtui",
+        "tooltip": false
+    },
+    "network#net2": {
+        "interface": "wlp2*",
+        "format": "{icon}",
+        "format-alt": "{ipaddr}/{cidr} {icon}",
+        "format-alt-click": "click-right",
+        "format-icons": {
+            "wifi": [""],
+            "disconnected": [""]
+        },
+        "on-click": "alacritty -e nmtui",
+        "tooltip": false
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "default": ""
+        },
+        "scroll-step": 1,
+        "on-click": "pavucontrol",
+        //"tooltip": false
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        },
+        "tooltip": false
+    },
+    "tray": {
+        "icon-size": 18
+    }
+}
+
