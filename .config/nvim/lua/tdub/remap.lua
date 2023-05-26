@@ -4,6 +4,7 @@
 -- See `:help vim.keymap.set()`
 -- For normal and visual modes set action to nop and be silent
 vim.keymap.set({ 'n', 'v' }, ',', '<Nop>', { silent = true })
+vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 
 -- Personal convenience mappings
 vim.keymap.set('n', '<leader>qa', ":qa!<CR>")                             -- Force quit all windows
@@ -42,6 +43,7 @@ vim.keymap.set('n', '<leader>/', function()
 end, { desc = '[/] Fuzzily search in current buffer' })
 
 vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
+vim.keymap.set('n', '<leader>sp', require('telescope.builtin').git_files, { desc = '[S]earch git [P]roject' })
 vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
